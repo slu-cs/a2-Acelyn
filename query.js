@@ -21,8 +21,8 @@ const queries = [
             console.log("There are no results matching your query.");
         else
             console.log(tem.length);
-                });
-        
+                })
+
         ]
 
 
