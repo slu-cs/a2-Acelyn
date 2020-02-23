@@ -9,7 +9,7 @@ const file = readline.createInterface({
 connect();
 
 const voters = []
-fs.on('line').then(function(line){
+file.on('line').then(function(line){
   const data = line.spit(',');
   voters.push(new Voter({first_name: data[0],
                         last_name: data[1],
