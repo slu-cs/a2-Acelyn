@@ -25,7 +25,7 @@ const queries = [
                     console.log(number);
                 });
         })
-        .catch(console.log(error.stack))]
+        ]
 
 
 
