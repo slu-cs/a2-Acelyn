@@ -16,7 +16,7 @@ const queries = [
   // What are names in alphabetical order?
 
   Voter.find({zip: 13617}).then(result =>result.map(r=> tem.push(r)))
-  .then(tem => (tem.length);)
+  .then(tem => (tem.length());)
 
         ]
 
