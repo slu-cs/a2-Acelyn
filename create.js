@@ -17,3 +17,12 @@ file.on('line', function(line){
                         history: data[3]
                       }));
     });
+
+file.on('close', function() {
+    mongoose.connection.dropDatabase()
+      .then(()=> voters.map(v=>v.save()))
+      .then(()=> console.log('All saved'))
+      .catch(error => console.log(error.stack));
+  });
+
+  
