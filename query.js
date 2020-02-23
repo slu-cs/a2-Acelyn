@@ -10,7 +10,7 @@ const queries = [
   //How many registered voters live in the Canton zip code (13617)?
   Voter.find({zip: 13617}).then(result =>(result.length)),
 
-  Voter.find({first_name: Starr})
+  Voter.find({first_name: 'Starr'})
 
         ]
 
