@@ -10,11 +10,24 @@ query.exec(function(error, professors) {
   if (error) console.error(error.stack);
   console.log(professors);
 });*/
-
+const tem =[];
 const queries = [
 
   // What are names in alphabetical order?
-  Voter.find().sort('first_name'),
+
+  Voter.find({zip: 13617}).then(result =>result.map(r=> tem.push(r)))
+  .then(tem => {
+        if (tem.length === 0)
+            console.log("There are no results matching your query.");
+        else
+            tem.count()
+                .then(number => {
+                    console.log(number);
+                });
+        })
+        .catch(console.log(error.stack))]
+
+
 
   // Who started most recently?
   //Voter.find().sort('-started').limit(1),
@@ -32,7 +45,7 @@ const queries = [
 // Run the queries in parallel
 Promise.all(queries)
   .then(function(results) {
-    console.log('Names in order: ', results[0].map(p => p.first_name));
+    console.log(result[0], ' registered voters live in the Canton zip code (13617)');
     //console.log('Started most recently: ', results[1].map(p => p.name));
   //  console.log('Started in 2003: ', results[2].map(p => p.name));
   //  console.log('Teaches 362: ', results[3].map(p => p.name));
