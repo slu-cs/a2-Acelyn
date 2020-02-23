@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const fs = require('mz/fs');
+//const fs = require('mz/fs');
 const connect = require('./db');
 const csv = require('mongoose-csv');
 const Voter = require('./schema');
