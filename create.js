@@ -1,25 +1,19 @@
 const mongoose = require('mongoose');
-//const fs = require('mz/fs');
 const connect = require('./db');
-const csv = require('mongoose-csv');
 const Voter = require('./schema');
+const fs = require('fs');
+const readline = require('readline');
+const file = readline.createInterface({
+  input: fs.createReadStream('voters.csv')
+});
 connect();
 
-const Area = conn.model('area', areaSchema);
-const filepath = "Voter.csv";
-fs.readFile(filepath, function(err, data) {
-    csv.parse(data, function(err, data) {
-        data.forEach(function(e, i, a) {
-            if (i != 0) {
-                const aVoter = new Area({
-                    first_name: e[0],
-                    last_name: e[1],
-                    zip: e[2],
-                    history: e[3],
-                });
-                a.save();
-            }
-        });
-
-    });
-  });
+const voters = []
+fs.readline('line', function(err,line){
+  const data = line.spit(',');
+  voters.push(new Voter({first_name: data[0],
+                        last_name: data[1],
+                        zip: data[2],
+                        history: data[3]
+                      }));
+    });  
