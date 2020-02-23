@@ -4,22 +4,13 @@ const Voter = require('./schema');
 
 connect(); // To the database
 
-/*// What documents are in the collection?
-const query = Professor.find();
-query.exec(function(error, professors) {
-  if (error) console.error(error.stack);
-  console.log(professors);
-});*/
-const tem =[];
+
 const queries = [
 
-  // What are names in alphabetical order?
+  //How many registered voters live in the Canton zip code (13617)?
+  Voter.find({zip: 13617}).then(result =>(result.length)),
 
-  Voter.find({zip: 13617}).then(result =>(result.length))
-    //result.map(r=> tem.push(r)))
-//  .then(tem => (tem.length))
-
-  //Voter.find({first_name: Starr}).then
+  Voter.find({first_name: Starr})
 
         ]
 
