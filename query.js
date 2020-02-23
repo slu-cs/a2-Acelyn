@@ -20,11 +20,9 @@ const queries = [
         if (tem.length === 0)
             console.log("There are no results matching your query.");
         else
-            tem.count()
-                .then(number => {
-                    console.log(number);
+            console.log(tem.length);
                 });
-        })
+        
         ]
 
 
