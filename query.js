@@ -16,12 +16,7 @@ const queries = [
   // What are names in alphabetical order?
 
   Voter.find({zip: 13617}).then(result =>result.map(r=> tem.push(r)))
-  .then(tem => {
-        if (tem.length === 0)
-            console.log("There are no results matching your query.");
-        else
-            console.log(tem.length);
-                })
+  .then(tem => tem.length;)
 
         ]
 
@@ -43,7 +38,7 @@ const queries = [
 // Run the queries in parallel
 Promise.all(queries)
   .then(function(queries) {
-    console.log(queries[0], ' registered voters live in the Canton zip code (13617)');
+    console.log(queries[0], 'registered voters live in the Canton zip code (13617)');
     //console.log('Started most recently: ', results[1].map(p => p.name));
   //  console.log('Started in 2003: ', results[2].map(p => p.name));
   //  console.log('Teaches 362: ', results[3].map(p => p.name));
