@@ -10,7 +10,7 @@ connect();
 
 const voters = []
 file.on('line', function(line){
-  const data = line.spit(',');
+  const data = line.split(',');
   voters.push(new Voter({first_name: data[0],
                         last_name: data[1],
                         zip: data[2],
