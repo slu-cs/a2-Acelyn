@@ -42,8 +42,8 @@ const queries = [
 
 // Run the queries in parallel
 Promise.all(queries)
-  .then(function(results) {
-    console.log(result[0], ' registered voters live in the Canton zip code (13617)');
+  .then(function(queries) {
+    console.log(queries[0], ' registered voters live in the Canton zip code (13617)');
     //console.log('Started most recently: ', results[1].map(p => p.name));
   //  console.log('Started in 2003: ', results[2].map(p => p.name));
   //  console.log('Teaches 362: ', results[3].map(p => p.name));
