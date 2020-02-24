@@ -10,7 +10,7 @@ const Voter = new mongoose.Schema({
 });
 
 // Speed up queries on all fields
-Voter.index({first_name: 3});
+Voter.index({first_name: 1});
 Voter.index({last_name: 1});
 Voter.index({zip: 1});
 Voter.index({history: 1});
