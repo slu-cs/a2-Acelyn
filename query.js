@@ -20,7 +20,7 @@ const queries = [
   Voter.find().sort('-last_name'),
 
   //How many zip codes does the county contain?
-  Voter.find().distinct().then(result =>(result.length))
+  Voter.find().distinct('zip').then(result =>(result.length))
         ]
 
 // Run the queries in parallel
