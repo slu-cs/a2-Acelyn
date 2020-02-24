@@ -1,8 +1,7 @@
 // Define a plan for a collection
-
 const mongoose = require('mongoose');
 
-// Schema for a collection of professors
+// Schema for a collection of voter
 const Voter = new mongoose.Schema({
   first_name: String,
   last_name: String,
@@ -11,7 +10,7 @@ const Voter = new mongoose.Schema({
 });
 
 // Speed up queries on all fields
-Voter.index({first_name: 1});
+Voter.index({first_name: 3});
 Voter.index({last_name: 1});
 Voter.index({zip: 1});
 Voter.index({history: 1});
