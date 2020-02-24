@@ -1,13 +1,16 @@
+// Store some data in the database
 const mongoose = require('mongoose');
 const connect = require('./db');
 const Voter = require('./schema');
+//read the file
 const fs = require('fs');
 const readline = require('readline');
 const file = readline.createInterface({
   input: fs.createReadStream('voters.csv')
 });
-connect();
+connect(); // To the database
 
+// create some voters using information from csv file
 const voters = []
 file.on('line', function(line){
   const data = line.split(',');
@@ -18,6 +21,7 @@ file.on('line', function(line){
                       }));
     });
 
+// close the file and reset the data
 file.on('close', function() {
     mongoose.connection.dropDatabase()
       .then(() => voters.map(v=>v.save()))
