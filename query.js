@@ -8,8 +8,7 @@ connect(); // To the database
 const queries = [
 
   //How many registered voters live in the Canton zip code (13617)?
-  Voter.find({zip: 13617}).length,
-  //then(result =>(result.length)),
+  Voter.find({zip: 13617}).then(result =>(result.length)),
 
   //What are the full names of all the registered voters whose first-name is STARR?
   Voter.find().where('first_name').equals('Starr'),
@@ -21,7 +20,7 @@ const queries = [
   Voter.find().sort('-last_name'),
 
   //How many zip codes does the county contain?
-  Voter.findOne().length
+  Voter.findOne().then(result =>(result.length))
         ]
 
 // Run the queries in parallel
