@@ -14,7 +14,7 @@ const queries = [
   Voter.find().where('first_name: ').equals('Starr'),
 
   //How many people voted in the 2016 general election (GE16)?
-  Voter.exists({history: /GE16/i}).then(result =>(result.length))
+  Voter.find({history: /GE16/i}).then(result =>(result.length))
 
   //What is the last-name that comes last in the county in alphabetical order?
 
