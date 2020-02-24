@@ -23,7 +23,6 @@ file.on('line', function(line){
 
 // close the file and reset the data
 file.on('close', function() {
-    if(error) console.log('error');
     mongoose.connection.dropDatabase()
       .then(() => voters.map(v=>v.save()))
       .then(() => mongoose.connection.close())
